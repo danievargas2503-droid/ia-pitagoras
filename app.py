@@ -17,13 +17,13 @@ def index():
         cateto1 = float(request.form["cateto1"])
         cateto2 = float(request.form["cateto2"])
 
-        datos = np.array([[cateto1, cateto2]])
+        datos = np.array([[cateto1, cateto2]])/100
 
         prediccion = modelo.predict(datos)
 
-        resultado = round(prediccion[0][0], 2)
+        resultado = round(float(prediccion[0][0] * 100), 2)
 
     return render_template("index.html", resultado=resultado)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
