@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>IA Pitágoras</title>
+
+</head>
+
+<body>
+
+    <h1>Calculadora IA</h1>
+
+    <form method="POST">
+
+        <input
+        type="number"
+        step="any"
+        name="cateto1"
+        placeholder="Cateto 1"
+        required>
+
+        <br><br>
+
+        <input
+        type="number"
+        step="any"
+        name="cateto2"
+        placeholder="Cateto 2"
+        required>
+
+        <br><br>
+
+        <button type="submit">
+
+            Calcular
+
+        </button>
+
+    </form>
+
+    {% if resultado %}
+
+        <h2>
+
+            Hipotenusa aproximada:
+            {{ resultado }}
+
+        </h2>
+
+    {% endif %}
+
+</body>
+
+</html>
