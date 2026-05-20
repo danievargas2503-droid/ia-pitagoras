@@ -1,3 +1,6 @@
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
 from flask import Flask, render_template, request
 import tensorflow as tf
 import numpy as np
@@ -5,7 +8,10 @@ import numpy as np
 app = Flask(__name__)
 
 # Cargar modelo entrenado
-modelo = tf.keras.models.load_model("modelo.h5")
+modelo = tf.keras.models.load_model(
+    "modelo.h5",
+    compile=False
+)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
